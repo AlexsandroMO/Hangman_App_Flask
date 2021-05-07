@@ -1,0 +1,21 @@
+
+{% extends "layout.html" %}
+{% block content %}
+
+
+<div id="container">
+    <div class="col-12 col-md-9">
+        <form action = "/result_game" method = "POST"> 
+            <h1>Jogo da Forca</h1>
+
+            <label>Digite a Palavra Secreta: </label>
+            <input type="text" name="word"/>
+            <label>Digite a Dica: </label>
+            <input type="text" name="dip" />
+            <input type="submit" value="OK"/>
+    </div>
+</div>
+
+
+
+{% endblock content %}
