@@ -5,12 +5,12 @@
 
 <div id="container">
     <div class="col-12 col-md-9">
-        <h2>Foi</h2>
-        <h3>Descubra a Palavra</h3>
+        <h2>Jogo da Forca</h2>
+        <h3>Descubra a Palavra Secreta</h3>
         <p> com  Letras</p>
         <div>
             {% for w in read_word %}
-            <p class="p-alinha">{{ w.0 }}</p>
+            <div class=""><p class="p-alinha">{{ w.0 }}</p></div>
             {% endfor %}
         </div>
         <form action = "/result_game_test" method = "POST"> 

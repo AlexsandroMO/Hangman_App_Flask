@@ -5,24 +5,27 @@
 
 <div id="container">
     <div class="col-12 col-md-9">
-        <h2>Foi</h2>
-        <h3>Descubra a Palavra</h3>
-        <p>{{var_dip}} com {{len_var_word}} Letras</p>
-        <div>
+        <div class="head-game">
+            <h2>Jogo da Forca</h2>
+            <h3>Descubra a Palavra</h3>
+            <p>{{var_dip}} com {{len_var_word}} Letras</p>
+        </div>
+        <div class="alinha-word">
             {% for w in word %}
-            <p class="p-alinha">{{ w.0 }}</p>
+                <div class="alinha-table"><p class="p-alinha">{{ w.0 }}</p></div>
             {% endfor %}
         </div>
-        <form action = "/result_game_test" method = "POST"> 
-            <label>Digite a Letra: </label>
-            <input type="text" name="read-word" value="{{word}}" hidden/>
-            <input type="text" name="letter"/>
-            <input type="submit" value="OK"/>
-        </form>
+        <div class="alinha-bt">
+            <form action = "/result_game_test" method = "POST"> 
+                <label>Digite a Letra: </label>
+                <input type="text" name="read-word" value="{{word}}" hidden/>
+                <input type="text" name="letter" class="alinha-input"/>
+                <input type="submit" value="OK" class="btn btn-secondary"/>
+            </form>
+        </div>
     </div>
 
 </div>
-
 
 
 {% endblock content %}

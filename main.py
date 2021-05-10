@@ -1,7 +1,7 @@
 #$ git config --global core.autocrlf input
 
 
-from flask import Flask, render_template, url_for, request,send_from_directory
+from flask import Flask, render_template, url_for, request, send_from_directory
 from tinydb import TinyDB, Query, where
 import hang
 
@@ -63,7 +63,7 @@ def game_choise():
     level = l_db.all()[0]['life']
     print('>>>>>>>>>>>>>', level, result, var_in)
 
-    if var_in != '0':
+    if var_in == '2':
       
       l_db.update({'life': 0})
 
@@ -71,7 +71,10 @@ def game_choise():
       print('>>>>>>>=====', level)
       #level['life'] = var_in
 
-    return render_template('game-choise.html')
+      return render_template('game-choise.html')
+
+    else:
+      return redirect('/')
 
 
 @app.route('/result_game', methods = ['POST', 'GET'])
