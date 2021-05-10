@@ -1,11 +1,15 @@
 
+.container-fluid{
+    padding: 50px;
+}
+
 #container{
     padding: 20px;
     background-color: coral;
 }
 
-h2{
-    padding-bottom: 10px;
+h1{
+    padding-bottom: 20px;
 
 }
 
@@ -27,6 +31,7 @@ h2{
 
 .alinha-bt{
     margin-top: 100px;
+    padding: 10px;
     background-color: cornsilk;
 }
 

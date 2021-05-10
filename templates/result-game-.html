@@ -11,23 +11,24 @@
             <p>{{var_dip}} com {{len_var_word}} Letras</p>
         </div>
         <div class="alinha-word">
-            {% for w in word %}
+            {% for w in read_word %}
                 <div class="alinha-table"><p class="p-alinha">{{ w.0 }}</p></div>
             {% endfor %}
         </div>
         <div class="alinha-bt">
             <form action = "/result_game_play" method = "POST"> 
                 <label>Digite a Letra: </label>
-                <input type="text" name="read-word" value="{{word}}" hidden/>
-                <input type="text" name="letter" class="alinha-input"/>
-                <input type="submit" name="type-game" value="OK" class="btn btn-secondary"/>
+                <input type="text" name="read-word" value="{{read_word}}" hidden/>
+                <input type="text" name="letter"/>
+                <input type="submit" value="OK"/>
             </form>
         </div>
         <br>
-        <a href="/"><button type="button" class="btn btn-secondary">Sair</button></a>
+        <button type="button" class="btn btn-secondary">Sair</button>
     </div>
 
 </div>
+
 
 
 {% endblock content %}

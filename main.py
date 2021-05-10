@@ -1,7 +1,7 @@
 #$ git config --global core.autocrlf input
 
 
-from flask import Flask, render_template, url_for, request, send_from_directory
+from flask import Flask, render_template, url_for, redirect, request, send_from_directory
 from tinydb import TinyDB, Query, where
 import hang
 
@@ -74,7 +74,7 @@ def game_choise():
       return render_template('game-choise.html')
 
     else:
-      return redirect('/')
+      return redirect(url_for('index'))
 
 
 @app.route('/result_game', methods = ['POST', 'GET'])
@@ -95,8 +95,8 @@ def result_game():
     return render_template('result-game.html', word=word, var_dip=var_dip, len_var_word=len_var_word)
 
 
-@app.route('/result_game_test', methods = ['POST', 'GET'])
-def result_game_test():
+@app.route('/result_game_play', methods = ['POST', 'GET'])
+def result_game_play():
   if request.method == 'POST':
     result = request.form
     read_letter = result['letter'].upper()
@@ -122,17 +122,14 @@ def result_game_test():
     dados = []
     for a in range(0, len(var_word)):
       if var_word[a] == read_letter:
-        #print('----------------------->>', read_word[0], read_letter)
         read_word[a] = read_letter
-        #read_word 
-        #l_db.update({'word': read_letter})
       else:
         dados.append('empyt')
         #read_word[a] = '_'
 
     print('----------------------->>', read_word)
 
-    return render_template('result-game-test.html', read_word=read_word, var_dip=var_dip, len_var_word=len_var_word, level=level)
+    return render_template('result-game-.html', read_word=read_word, var_dip=var_dip, len_var_word=len_var_word, level=level)
 
     """ #------------------------- Teste de Derrota
     if len(dados) == len(var_word):
