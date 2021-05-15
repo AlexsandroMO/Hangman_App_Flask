@@ -98,3 +98,47 @@ db.insert(data) """
 
 #   return life
 
+
+
+
+'''data = {
+  'word': 'CADEIRA',
+  'dip': 'OBJETO',
+}
+
+db_G.insert(data)'''
+
+
+'''class ldb():
+  def __init__(self, life):
+    self.level = life
+
+class game_AI():
+  def __init__(self, word):
+    self.secret = word'''
+    
+
+
+'''@app.route('/game_choise2', methods = ['POST', 'GET'])
+def game_choise2():
+  if request.method == 'POST':
+    result = request.form
+    var_in = result['select']
+
+    if var_in == '1':
+      AI = g_db.all()
+      x = random.randint(0, 7)
+      var_secret = AI[x]
+      print('>>>------', x, AI[x])
+
+      var_dip = var_secret['dip']
+
+      len_var_word = len(var_secret['word'])
+      lines = '_ ' * len(var_secret['word'])
+      read_word  = lines.split()
+      word = ''
+      return render_template('game-choise3.html', word=word, var_dip=var_dip, len_var_word=len_var_word, var_secret=var_secret, read_word=read_word)
+
+    else:
+      return redirect(url_for('index'))
+'''
