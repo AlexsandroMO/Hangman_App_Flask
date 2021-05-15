@@ -69,3 +69,32 @@ def tow_gamers(var_word, var_dip):
   #   print(word)
   #   print('\n{}'.format(result))
   #   print('\n\n')
+
+
+  
+""" 
+data = {
+  'word': CASA,
+}
+
+dbg.insert(data) """
+
+""" 
+data = {
+  'life': 3,
+  'word': 'CASA'
+}
+
+db.insert(data) """
+# def zera_life():
+
+#   l_db.clear_cache()
+#   level = {
+#     'life': 3
+#   }
+
+#   l_db.insert(level)
+#   life = l_db.all()[0]['life']
+
+#   return life
+
